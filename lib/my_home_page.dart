@@ -1,45 +1,53 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        // handle background
-        decoration: BoxDecoration(
-            image: DecorationImage(
-          image: AssetImage('assets/images/login_background.png'),
-          fit: BoxFit.cover,
-        )),
-        child: Column(
-          children: <Widget>[
-            Container(
-              child: ActionAppBar(),
+      body: Stack(
+        children: [
+          Container(
+            height: double.infinity,
+            // handle background
+            decoration: BoxDecoration(
+                image: DecorationImage(
+              image: AssetImage('assets/images/login_background.png'),
+              fit: BoxFit.cover,
+            )),
+            child: SingleChildScrollView(
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    child: ActionAppBar(),
+                  ),
+                  MQL5(),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 10),
+                    child: NameAdressWebsite(),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 10),
+                    child: TxtFieldLogin(),
+                  ),
+                  Container(
+                    child: Contents(),
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(vertical: 10),
+                    child: ButtonLogin(),
+                  ),
+                ],
+              ),
             ),
-            MQL5(),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 10),
-              child: NameAdressWebsite(),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 10),
-              child: TxtFieldLogin(),
-            ),
-            Container(
-              child: Contents(),
-            ),
-            Container(
-              padding: EdgeInsets.symmetric(vertical: 10),
-              child: ButtonLogin(),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
 }
 
-class ActionAppBar extends StatelessWidget{
+class ActionAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -68,7 +76,7 @@ class ActionAppBar extends StatelessWidget{
   }
 }
 
-class MQL5 extends StatelessWidget{
+class MQL5 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -93,78 +101,75 @@ class MQL5 extends StatelessWidget{
       ],
     );
   }
-
 }
 
-class NameAdressWebsite extends StatelessWidget{
+class NameAdressWebsite extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
         Text(
           'Join Traders Community',
-          style: TextStyle(color: Colors.white, fontFamily: 'Roboto',fontSize: 20),
+          style: TextStyle(
+              color: Colors.white, fontFamily: 'Roboto', fontSize: 20),
         ),
         Text(
           'www.mql5.com',
-          style: TextStyle(color: Colors.white, fontFamily: 'Roboto',fontSize: 20),
+          style: TextStyle(
+              color: Colors.white, fontFamily: 'Roboto', fontSize: 20),
         )
       ],
     );
   }
-
 }
 
-class TxtFieldLogin extends StatelessWidget{
+class TxtFieldLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 30),
-        padding: EdgeInsets.symmetric(horizontal: 8),
-        height: 100,
-        width: 500,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5),
-          color: Colors.white,
-        ),
-        child: Column(
-          children: [
-            Flexible(
-              flex: 2,
-              child: TextField(
-                decoration: InputDecoration(
-                  labelText: "Login",
-                  labelStyle: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.bold),
-                  hintTextDirection: TextDirection.rtl,
-                  hintText: "Enter Login",
-                  floatingLabelBehavior: FloatingLabelBehavior.always,
-                ),
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 30),
+      padding: EdgeInsets.symmetric(horizontal: 8),
+      height: 100,
+      width: 500,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(5),
+        color: Colors.white,
+      ),
+      child: Column(
+        children: [
+          Flexible(
+            flex: 2,
+            child: TextField(
+              decoration: InputDecoration(
+                labelText: "Login",
+                labelStyle:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                hintTextDirection: TextDirection.rtl,
+                hintText: "Enter Login",
+                floatingLabelBehavior: FloatingLabelBehavior.always,
               ),
             ),
-            Flexible(
-              flex: 2,
-              child: TextField(
-                decoration: InputDecoration(
-                  labelText: "Email",
-                  labelStyle: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.bold),
-                  hintTextDirection: TextDirection.rtl,
-                  hintText: "Email",
-                  floatingLabelBehavior: FloatingLabelBehavior.always,
-                ),
+          ),
+          Flexible(
+            flex: 2,
+            child: TextField(
+              decoration: InputDecoration(
+                labelText: "Email",
+                labelStyle:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                hintTextDirection: TextDirection.rtl,
+                hintText: "Email",
+                floatingLabelBehavior: FloatingLabelBehavior.always,
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
-
 }
 
-class Contents extends StatelessWidget{
+class Contents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -193,7 +198,7 @@ class Contents extends StatelessWidget{
   }
 }
 
-class ButtonLogin extends StatelessWidget{
+class ButtonLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -242,7 +247,7 @@ class ButtonLogin extends StatelessWidget{
                     "Countie With Facebook",
                     style: TextStyle(
                       fontWeight: FontWeight.normal,
-                      color: Colors.blue[900],
+                      color: Colors.blue[800],
                     ),
                   ),
                 ),
@@ -254,5 +259,4 @@ class ButtonLogin extends StatelessWidget{
       ],
     );
   }
-
 }
