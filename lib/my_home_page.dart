@@ -5,8 +5,6 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
         // handle background
         decoration: BoxDecoration(
             image: DecorationImage(
@@ -34,7 +32,6 @@ class MyHomePage extends StatelessWidget {
               padding: EdgeInsets.symmetric(vertical: 10),
               child: ButtonLogin(),
             ),
-
           ],
         ),
       ),
@@ -121,13 +118,12 @@ class NameAdressWebsite extends StatelessWidget{
 class TxtFieldLogin extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return SingleChildScrollView(
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 30),
         padding: EdgeInsets.symmetric(horizontal: 8),
-        height: size.height * 0.15,
-        width: size.width * 10,
+        height: 100,
+        width: 500,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
           color: Colors.white,
@@ -195,18 +191,15 @@ class Contents extends StatelessWidget{
       ],
     );
   }
-
 }
 
 class ButtonLogin extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Column(
       children: [
         Container(
           margin: EdgeInsets.symmetric(horizontal: 30),
-          // ignore: deprecated_member_use
           child: FlatButton(
             minWidth: double.infinity,
             color: Colors.orange,
@@ -240,8 +233,8 @@ class ButtonLogin extends StatelessWidget{
                 Image.asset(
                   "assets/images/icon_facebook.png",
                   fit: BoxFit.contain,
-                  width: size.height / 30,
-                  height: size.height / 30,
+                  width: 20,
+                  height: 20,
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
