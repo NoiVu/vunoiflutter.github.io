@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.loginpage">
+    package="com.example.gmo_loginpage">
    <application
-        android:label="loginpage"
+        android:label="gmo_loginpage"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

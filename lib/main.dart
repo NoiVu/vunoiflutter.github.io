@@ -1,13 +1,19 @@
-import "package:flutter/material.dart";
-import 'Login_Screen.dart';
+import 'package:flutter/material.dart';
+import 'my_home_page.dart';
 
+void main() {
+  runApp(MyApp());
+}
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: ThemeData(primarySwatch: Colors.blue), home: LoginPage());
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        visualDensity: VisualDensity.adaptivePlatformDensity
+      ),
+      home: MyHomePage(),
+    );
   }
 }
