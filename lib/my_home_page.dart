@@ -20,6 +20,7 @@ class MyHomePage extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   Container(
+                    padding: EdgeInsets.only(top: 8, bottom: 20),
                     child: ActionAppBar(),
                   ),
                   MQL5(),
@@ -52,25 +53,28 @@ class ActionAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Row(
+      child: Stack(
         children: <Widget>[
-          Expanded(
-            child: FlatButton(
+          Container(
+            padding: EdgeInsets.only(left: 5),
+            child: Align(
+              alignment: Alignment.centerLeft,
               child: Text(
                 'Cancel',
-                style: TextStyle(fontSize: 15.0, color: Colors.white),
+                style: TextStyle(color: Colors.white, fontSize: 18.0),
               ),
-              onPressed: () {},
             ),
-            flex: 1,
           ),
-          Expanded(
+          Align(
+            alignment: Alignment.center,
             child: Text(
               'Registration',
-              style: TextStyle(fontSize: 20.0, color: Colors.white),
+              style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18.0),
             ),
-            flex: 2,
-          )
+          ),
         ],
       ),
     );
@@ -87,15 +91,17 @@ class MQL5 extends StatelessWidget {
           'MQL',
           style: TextStyle(
               fontFamily: 'Roboto',
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w700,
+              fontStyle: FontStyle.normal,
               fontSize: 30,
               color: Colors.white),
         ),
         Text(
           '5',
           style: TextStyle(
-              fontFamily: 'Roboto',
-              fontWeight: FontWeight.bold,
+              fontFamily: 'Roboto_Regular',
+              fontWeight: FontWeight.w600,
+              fontStyle: FontStyle.italic,
               fontSize: 30,
               color: Colors.orange),
         )
@@ -139,23 +145,22 @@ class TxtFieldLogin extends StatelessWidget {
       child: Column(
         children: [
           Flexible(
-            flex: 2,
-            child: TextFormField(
-              initialValue: 'Login',
-              decoration: const InputDecoration(
-                suffix: Text('email login')
-              ),
-            )
-          ),
+              flex: 2,
+              child: TextFormField(
+                initialValue: 'Login',
+                decoration: const InputDecoration(
+                  suffix: Text('email login'),
+                ),
+              )),
           Flexible(
-            flex: 2,
-            child: TextFormField(
-              initialValue: 'Email',
-              decoration: InputDecoration(
-                suffix: const Text('email')
-              ),
-            )
-          ),
+              flex: 2,
+              child: TextFormField(
+                initialValue: 'Email',
+                decoration: InputDecoration(
+                  suffix: const Text('email'),
+                  border: InputBorder.none,
+                ),
+              )),
         ],
       ),
     );
@@ -165,28 +170,14 @@ class TxtFieldLogin extends StatelessWidget {
 class Contents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          "The password for your new MQL5",
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        ),
-        Text(
-          "account will be sent to the specified email",
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        ),
-        Text(
-          "address",
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        ),
-      ],
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 29),
+      child: Text(
+        'The password for your new MQL5 account will be '
+        'sent to the specified email address',
+        textAlign: TextAlign.center,
+        style: TextStyle(color: Colors.white),
+      ),
     );
   }
 }
