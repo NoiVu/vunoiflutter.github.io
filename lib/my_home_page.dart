@@ -177,31 +177,14 @@ class TxtFieldLogin extends StatelessWidget {
 class Contents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return RichText(
-      textAlign: TextAlign.center,
-      text: TextSpan(children: [
-        TextSpan(
-          text: 'The password for your new MQL5 \n',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 14,
-          ),
-        ),
-        TextSpan(
-          text: 'account will be sent to the specified email \n',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 14,
-          ),
-        ),
-        TextSpan(
-          text: 'address',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 14,
-          ),
-        ),
-      ]),
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 29),
+      child: Text(
+        'The password for your new MQL5 account will be '
+        'sent to the specified email address',
+        textAlign: TextAlign.center,
+        style: TextStyle(color: Colors.white),
+      ),
     );
   }
 }
