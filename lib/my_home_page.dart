@@ -17,11 +17,10 @@ class MyHomePage extends StatelessWidget {
               image: AssetImage('assets/images/login_background.png'),
               fit: BoxFit.cover,
             )),
-
             child: SingleChildScrollView(
               child: Column(
                 children: <Widget>[
-                  Container(
+                  Padding(
                     padding: EdgeInsets.only(top: 8, bottom: 20),
                     child: ActionAppBar(),
                   ),
@@ -34,10 +33,11 @@ class MyHomePage extends StatelessWidget {
                     padding: EdgeInsets.symmetric(vertical: 10),
                     child: TxtFieldLogin(),
                   ),
-                  Container(
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
                     child: Contents(),
                   ),
-                  Container(
+                  Padding(
                     padding: EdgeInsets.symmetric(vertical: 10),
                     child: ButtonLogin(),
                   ),
@@ -59,12 +59,9 @@ class ActionAppBar extends StatelessWidget {
         children: <Widget>[
           Container(
             padding: EdgeInsets.only(left: 5),
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                'Cancel',
-                style: TextStyle(color: Colors.white, fontSize: 18.0),
-              ),
+            child: Text(
+              'Cancel',
+              style: TextStyle(color: Colors.white, fontSize: 18.0),
             ),
           ),
           Align(
@@ -178,7 +175,7 @@ class Contents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 29),
+      padding: EdgeInsets.symmetric(horizontal: 29),
       child: Text(
         'The password for your new MQL5 account will be '
         'sent to the specified email address',
