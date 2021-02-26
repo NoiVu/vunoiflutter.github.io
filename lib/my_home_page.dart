@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -84,28 +86,28 @@ class ActionAppBar extends StatelessWidget {
 class MQL5 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Text(
-          'MQL',
+    return RichText(
+      text: TextSpan(children: <InlineSpan>[
+        TextSpan(
+          text: 'MQL',
           style: TextStyle(
-              fontFamily: 'Roboto',
-              fontWeight: FontWeight.w700,
-              fontStyle: FontStyle.normal,
-              fontSize: 30,
-              color: Colors.white),
+            fontFamily: 'Roboto',
+            fontWeight: FontWeight.w700,
+            fontSize: 30,
+            color: Colors.white,
+          ),
         ),
-        Text(
-          '5',
+        TextSpan(
+          text: '5',
           style: TextStyle(
-              fontFamily: 'Roboto_Regular',
-              fontWeight: FontWeight.w600,
-              fontStyle: FontStyle.italic,
-              fontSize: 30,
-              color: Colors.orange),
+            fontFamily: 'Roboto_Regular',
+            fontSize: 30,
+            fontWeight: FontWeight.w600,
+            fontStyle: FontStyle.italic,
+            color: Color(0xffFDDA2B),
+          ),
         )
-      ],
+      ]),
     );
   }
 }
@@ -113,19 +115,24 @@ class MQL5 extends StatelessWidget {
 class NameAdressWebsite extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Text(
-          'Join Traders Community',
+    return RichText(
+      textAlign: TextAlign.center,
+      text: TextSpan(children: [
+        TextSpan(
+          text: 'Join Traders Community\n',
           style: TextStyle(
-              color: Colors.white, fontFamily: 'Roboto', fontSize: 20),
+            color: Colors.white,
+            fontSize: 22,
+          ),
         ),
-        Text(
-          'www.mql5.com',
+        TextSpan(
+          text: 'www.mql5.com',
           style: TextStyle(
-              color: Colors.white, fontFamily: 'Roboto', fontSize: 20),
+            color: Colors.white,
+            fontSize: 20,
+          ),
         )
-      ],
+      ]),
     );
   }
 }
@@ -170,14 +177,31 @@ class TxtFieldLogin extends StatelessWidget {
 class Contents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 29),
-      child: Text(
-        'The password for your new MQL5 account will be '
-        'sent to the specified email address',
-        textAlign: TextAlign.center,
-        style: TextStyle(color: Colors.white),
-      ),
+    return RichText(
+      textAlign: TextAlign.center,
+      text: TextSpan(children: [
+        TextSpan(
+          text: 'The password for your new MQL5 \n',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 14,
+          ),
+        ),
+        TextSpan(
+          text: 'account will be sent to the specified email \n',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 14,
+          ),
+        ),
+        TextSpan(
+          text: 'address',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 14,
+          ),
+        ),
+      ]),
     );
   }
 }
@@ -191,7 +215,7 @@ class ButtonLogin extends StatelessWidget {
           margin: EdgeInsets.symmetric(horizontal: 30),
           child: FlatButton(
             minWidth: double.infinity,
-            color: Colors.orange,
+            color: Color(0xffFAB624),
             padding: EdgeInsets.symmetric(vertical: 8),
             child: Text(
               "Register",
@@ -214,7 +238,7 @@ class ButtonLogin extends StatelessWidget {
         Container(
           margin: EdgeInsets.symmetric(horizontal: 30),
           child: FlatButton(
-            color: Colors.blue[50],
+            color: Color(0xffDEE6F3),
             padding: EdgeInsets.symmetric(vertical: 8),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
