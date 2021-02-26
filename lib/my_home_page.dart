@@ -15,6 +15,7 @@ class MyHomePage extends StatelessWidget {
               image: AssetImage('assets/images/login_background.png'),
               fit: BoxFit.cover,
             )),
+
             child: SingleChildScrollView(
               child: Column(
                 children: <Widget>[
@@ -130,7 +131,7 @@ class TxtFieldLogin extends StatelessWidget {
       margin: EdgeInsets.symmetric(horizontal: 30),
       padding: EdgeInsets.symmetric(horizontal: 8),
       height: 100,
-      width: 500,
+      width: 400,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5),
         color: Colors.white,
@@ -139,29 +140,21 @@ class TxtFieldLogin extends StatelessWidget {
         children: [
           Flexible(
             flex: 2,
-            child: TextField(
-              decoration: InputDecoration(
-                labelText: "Login",
-                labelStyle:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-                hintTextDirection: TextDirection.rtl,
-                hintText: "Enter Login",
-                floatingLabelBehavior: FloatingLabelBehavior.always,
+            child: TextFormField(
+              initialValue: 'Login',
+              decoration: const InputDecoration(
+                suffix: Text('email login')
               ),
-            ),
+            )
           ),
           Flexible(
             flex: 2,
-            child: TextField(
+            child: TextFormField(
+              initialValue: 'Email',
               decoration: InputDecoration(
-                labelText: "Email",
-                labelStyle:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-                hintTextDirection: TextDirection.rtl,
-                hintText: "Email",
-                floatingLabelBehavior: FloatingLabelBehavior.always,
+                suffix: const Text('email')
               ),
-            ),
+            )
           ),
         ],
       ),
