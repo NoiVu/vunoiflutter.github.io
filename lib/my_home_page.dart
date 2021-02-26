@@ -131,7 +131,7 @@ class TxtFieldLogin extends StatelessWidget {
       margin: EdgeInsets.symmetric(horizontal: 30),
       padding: EdgeInsets.symmetric(horizontal: 8),
       height: 100,
-      width: 400,
+      width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5),
         color: Colors.white,
